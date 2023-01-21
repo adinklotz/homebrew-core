@@ -29,6 +29,7 @@ class RustupInit < Formula
 
   def install
     system "cargo", "install", "--features", "no-self-update", *std_cargo_args
+    generate_completions_from_executable(bin/"rustup", "completions")
   end
 
   test do
